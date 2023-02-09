@@ -1,0 +1,163 @@
+.selectLang{
+  width: 100%;
+  display: flex;
+  position: absolute;
+  top: 11%;
+  left: 10%;
+}
+
+.selectContainer{
+  display: flex;
+  gap: 10px;
+  padding-left: 5px;
+}
+
+.selectLang p{
+  font-size: 20px;
+}
+
+.javaScript{
+  width: 100px;
+  margin: auto;
+  padding: 5px 10px;
+  text-align: center;
+  background-color: #F0DB4F;
+  color: #323330;
+  border-radius: 3px;
+}
+
+.javaScript:hover{
+  background-color: #bea81c;
+  cursor: pointer;
+}
+
+.typeScript{
+  width: 100px;
+  margin: auto;
+  padding: 5px 10px;
+  text-align: center;
+  background-color: #007ACC;
+  color: #FFFFFF;
+  border-radius: 3px;
+}
+
+.typeScript:hover{
+  background-color: #1896ea;
+  cursor: pointer;
+}
+
+.formContainer{
+  width: 40rem;
+  height: 20rem;
+  border: 1px solid rgb(184, 184, 184);
+  border-radius: 5px;
+  background-color: rgb(240, 240, 240);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  row-gap: 5px;
+  column-gap: 5px;
+  padding: 5px;
+  justify-content: flex-start;
+}
+
+.inputContainer{
+  width: 190px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  font-size: 15px;
+}
+
+.inputContainer input{
+  width: 95%;
+  height: 30px;
+  border: 1px solid grey;
+  border-radius: 3px;
+  margin-top: -15px;
+}
+
+.resultContainer{
+  width: 20rem;
+  height: 20rem;
+  padding: 5px;
+  border: 1px solid rgb(184, 184, 184);
+  border-radius: 5px;
+  background-color: rgb(240, 240, 240);
+}
+
+.showTypeScript{
+  border: none;
+  background-color: #007ACC;
+  color: white;
+  width: 20.7rem;
+  margin-top: 1.5px;
+  margin-left: -5px;;
+  height: 2rem;
+  border: 1px solid rgb(117, 116, 116);
+  border-radius: 5px;
+}
+
+.showTypeScript:hover{
+  cursor: pointer;
+  background-color: #1896ea;
+}
+
+.showJavaScript{
+  border: none;
+  background-color: #F0DB4F;
+  color: #323330;
+  width: 20.7rem;
+  margin-left: -5px;;
+  height: 2rem;
+  border: 1px solid rgb(117, 116, 116);
+  border-radius: 5px;
+}
+
+.showJavaScript:hover{
+  cursor: pointer;
+  background-color: #bea81c;
+}
+
+.madeByJS{
+  width: 40rem;
+  padding: 5px;
+  height: 1.23rem;
+  background-color: #F0DB4F;
+  border: 1px solid #323330;
+  position: absolute;
+  left: 0%;
+  bottom: -13.4%;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.madeByTS{
+  width: 40rem;
+  padding: 5px;
+  height: 1.23rem;
+  background-color: #007ACC;
+  color: white;
+  border: 1px solid #323330;
+  position: absolute;
+  left: 0%;
+  bottom: -13.4%;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.codeDocumenting{
+  position: absolute;
+  top: 8%;
+  left: 12.5%;
+  font-size: 35px
+}
+
+.tsdocContainer{
+  position: absolute;
+  display: flex;
+  top: 22%;
+  left: 12.5%;
+  gap: 10px;
+}
