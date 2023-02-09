@@ -97,7 +97,7 @@ export function calculateTax(price: number, qty: number, taxPercentage: number) 
 }
 ```
 * 
-* @returns Total price after (Discounted after tax)
+* @returns Total price
 */
 export function countTotalPrice(form: {name: string, qty:number, price: number, discount:number, tax:number}) {
   
