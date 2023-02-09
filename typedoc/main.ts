@@ -1,70 +1,82 @@
 /**
- * Function untuk menghitung potongan harga
+ * A function to count and show discounted price
  * 
- * @param price Harga asli barang
- * @param qty Jumlah barang yang dibeli
- * @param discount Potongan harga barang yang dibeli
- * @returns Nominal potongan harga
+ * @param price Product price
+ * @param qty Product quantity
+ * @param discount Total Discount
+ * 
+ * @example
+ * ```tsx
+ * function calculateDiscount(price:number, qty:number, discount:number) {
+  return (price * qty) * (discount / 100);
+}
+```
+ * @returns Price after discount (Number)
  */
- export function calculateDiscountTS(price:number, qty:number, discount:number) {
+ export function calculateDiscount(price:number, qty:number, discount:number) {
   return (price * qty) * (discount / 100);
 }
 
 /**
+ * A function to count and show taxed price
  * 
- * @param price Harga asli barang
- * @param qty Jumlah barang yang dibeli
- * @param taxPercentage Pajak harga barang yang dibeli
- * @returns Nominal pajak barang
+ * @param price Product price
+ * @param qty Product quantity
+ * @param taxPercentage Total tax
+ * 
+ * @example
+ * ```tsx
+ * function calculateTax(price: number, qty: number, taxPercentage: number) {
+  return (price * qty) * (taxPercentage / 100);
+}
+```
+ * @returns Price after tax (Number)
  */
-export function calculateTaxTS(price: number, qty: number, taxPercentage: number) {
+export function calculateTax(price: number, qty: number, taxPercentage: number) {
   return (price * qty) * (taxPercentage / 100);
 }
 
 /**
- * Function untuk mengalikan harga barang dengan jumlah yang dibeli
+ * Function to count price before tax and discount
  * 
- * @param price Harga asli barang
- * @param qty Jumlah barang
+ * @param price Product price
+ * @param qty Product quantity
+ * 
+ * @example
+ * ```tsx
+ * function countPrice(price: number, qty: number) {
+  return price * qty
+}
+```
  * @returns 
  */
-export function sumPriceTS(price: number, qty: number) {
+export function countPrice(price: number, qty: number) {
   return price * qty
 }
 
 /**
- * Function untuk menghitung total harga
+ * Function to count Total Price
  * 
- * @param form Object data dari form
- * @returns Total harga setelah potongan harga dan pajak
- */
-export function countTotalPriceTS(form: {name: string, qty:number, price: number, discount:number, tax:number}) {
-
-  console.log("form", form)
+ * @param form Submitted form data:
+ * 
+ * @example
+ * ```tsx
+ * function countTotalPrice(form: {name: string, qty:number, price: number, discount:number, tax:number}) {
 
   let taxAmount = null;
   let priceAfterDiscount = null;
-  let price = sumPriceTS(form.price, form.qty)
+  let price = countPrice(form.price, form.qty)
   let totalPrice = null;
 
-    /**
-     * Kalau ada diskon makan kondisi ini akan berjalan
-     */
     if (form.discount > 0) { 
-      priceAfterDiscount = price - calculateDiscountTS(form.price, form.qty, form.discount)
+      priceAfterDiscount = price - calculateDiscount(form.price, form.qty, form.discount)
     }
-    console.log("CL DC", calculateDiscountTS(form.price, form.qty, form.discount))
-    console.log("priceAfterDiscount", priceAfterDiscount)
-    /**
-     * Kalau ada tax maka kondisi ini akan berjalan
-     */
     if (form.tax > 0) {
       if (priceAfterDiscount) {
-        console.log("MASUK PAD")
-        taxAmount = calculateTaxTS(priceAfterDiscount, 1, form.tax)
+        taxAmount = calculateTax(priceAfterDiscount, 1, form.tax)
         totalPrice = priceAfterDiscount + taxAmount
       } else {
-        taxAmount = calculateTaxTS(form.price, form.qty, form.tax)
+        taxAmount = calculateTax(form.price, form.qty, form.tax)
         totalPrice = price + taxAmount
       }
     } else {
@@ -74,7 +86,37 @@ export function countTotalPriceTS(form: {name: string, qty:number, price: number
       totalPrice = price
       }
     }
+    return totalPrice
+  }
+  ```
+ * 
+ * @returns Total price after tax and discount (Number)
+ */
+export function countTotalPrice(form: {name: string, qty:number, price: number, discount:number, tax:number}) {
 
+  let taxAmount = null;
+  let priceAfterDiscount = null;
+  let price = countPrice(form.price, form.qty)
+  let totalPrice = null;
+
+    if (form.discount > 0) { 
+      priceAfterDiscount = price - calculateDiscount(form.price, form.qty, form.discount)
+    }
+    if (form.tax > 0) {
+      if (priceAfterDiscount) {
+        taxAmount = calculateTax(priceAfterDiscount, 1, form.tax)
+        totalPrice = priceAfterDiscount + taxAmount
+      } else {
+        taxAmount = calculateTax(form.price, form.qty, form.tax)
+        totalPrice = price + taxAmount
+      }
+    } else {
+      if (priceAfterDiscount) {
+        totalPrice = priceAfterDiscount
+      } else {
+      totalPrice = price
+      }
+    }
     return totalPrice
   }
 

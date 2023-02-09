@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styles from '@/styles/Home.module.css'
-import { calculateDiscountTS, calculateTaxTS, countTotalPriceTS, sumPriceTS } from '../../typedoc/main'
+import { calculateDiscount, calculateTax, countTotalPrice, countPrice } from '../../typedoc/main'
 
 export default function TsDoc() {
 
@@ -22,9 +22,9 @@ export default function TsDoc() {
     })
   }
 
-  let totalDiscount = calculateDiscountTS(price, qty, discount);
-  let priceAfterDiscount = sumPriceTS(price, qty) - calculateDiscountTS(price, qty, discount);
-  let totalTax = calculateTaxTS(priceAfterDiscount, 1, tax);
+  let totalDiscount = calculateDiscount(price, qty, discount);
+  let priceAfterDiscount = countPrice(price, qty) - calculateDiscount(price, qty, discount);
+  let totalTax = calculateTax(priceAfterDiscount, 1, tax);
 
   return (
     <>
@@ -50,19 +50,19 @@ export default function TsDoc() {
             <p>Pajak</p>
             <input name='tax' type="number" value={tax} onChange={handleChange} />
           </div>
-          <div className={styles.madeByTS}>Made by Kegabutan</div>
+          <div className={styles.madeBy}>Made by Kegabutan</div>
         </div>
         <div className={styles.resultContainer}>
           <p>Nama: {name}</p>
           <p>Jumlah: {qty}</p>
-          <p>Harga: Rp{sumPriceTS(price, qty)}</p>
+          <p>Harga: Rp{countPrice(price, qty)}</p>
           <hr />
           <p>Diskon: Rp{totalDiscount} ({discount}%)</p>
           <p>Total Pajak: Rp{totalTax} ({tax}%)</p>
           <p>Subtotal: Rp{priceAfterDiscount + totalTax}</p>
           <hr />
-          <p style={{ marginTop: '-1px' }}>Total Harga: Rp{countTotalPriceTS(form)}</p>
-          <a href="https://typedoc.vercel.app" target="_blank"><button className={styles.showTypeScript}>Show TS Documentation</button></a>
+          <p style={{ marginTop: '-1px' }}>Total Harga: Rp{countTotalPrice(form)}</p>
+          <a href="https://typedoc.vercel.app" target="_blank"><button className={styles.showTypeScript}>Show  Documentation</button></a>
         </div>
       </div>
     </>
