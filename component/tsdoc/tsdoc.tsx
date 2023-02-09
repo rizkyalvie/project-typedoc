@@ -50,7 +50,6 @@ export default function TsDoc() {
             <p>Pajak</p>
             <input name='tax' type="number" value={tax} onChange={handleChange} />
           </div>
-          <div className={styles.madeBy}>Made by Kegabutan</div>
         </div>
         <div className={styles.resultContainer}>
           <p>Nama: {name}</p>
@@ -62,7 +61,7 @@ export default function TsDoc() {
           <p>Subtotal: Rp{priceAfterDiscount + totalTax}</p>
           <hr />
           <p style={{ marginTop: '-1px' }}>Total Harga: Rp{countTotalPrice(form)}</p>
-          <a href="https://typedoc.vercel.app" target="_blank"><button className={styles.showTypeScript}>Show  Documentation</button></a>
+          <a href="https://typedoc.vercel.app" target="_blank"><button className={styles.showTypeScript}>Show Documentation</button></a>
         </div>
       </div>
     </>
