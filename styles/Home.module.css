@@ -16,21 +16,6 @@
   font-size: 20px;
 }
 
-.javaScript{
-  width: 100px;
-  margin: auto;
-  padding: 5px 10px;
-  text-align: center;
-  background-color: #F0DB4F;
-  color: #323330;
-  border-radius: 3px;
-}
-
-.javaScript:hover{
-  background-color: #bea81c;
-  cursor: pointer;
-}
-
 .typeScript{
   width: 100px;
   margin: auto;
@@ -118,33 +103,6 @@
 .showJavaScript:hover{
   cursor: pointer;
   background-color: #bea81c;
-}
-
-.madeByJS{
-  width: 40rem;
-  padding: 5px;
-  height: 1.23rem;
-  background-color: #F0DB4F;
-  border: 1px solid #323330;
-  position: absolute;
-  left: 0%;
-  bottom: -13.4%;
-  border-radius: 5px;
-  text-align: center;
-}
-
-.madeByTS{
-  width: 40rem;
-  padding: 5px;
-  height: 1.23rem;
-  background-color: #007ACC;
-  color: white;
-  border: 1px solid #323330;
-  position: absolute;
-  left: 0%;
-  bottom: -13.4%;
-  border-radius: 5px;
-  text-align: center;
 }
 
 .codeDocumenting{
