@@ -31,36 +31,36 @@ export default function TsDoc() {
       <div className={styles.tsdocContainer}>
         <div className={styles.formContainer}>
           <div className={styles.inputContainer}>
-            <p>Nama Barang</p>
+            <p>Product name</p>
             <input name='name' type="text" value={name} onChange={handleChange} />
           </div>
           <div className={styles.inputContainer}>
-            <p>Jumlah</p>
+            <p>Quantity</p>
             <input name='qty' type="number" value={qty} onChange={handleChange} />
           </div>
           <div className={styles.inputContainer}>
-            <p>Harga</p>
+            <p>Price</p>
             <input name='price' type="number" value={price} onChange={handleChange} />
           </div>
           <div className={styles.inputContainer}>
-            <p>Diskon</p>
+            <p>Discount</p>
             <input name='discount' type="number" value={discount} onChange={handleChange} />
           </div>
           <div className={styles.inputContainer}>
-            <p>Pajak</p>
+            <p>Tax</p>
             <input name='tax' type="number" value={tax} onChange={handleChange} />
           </div>
         </div>
         <div className={styles.resultContainer}>
-          <p>Nama: {name}</p>
-          <p>Jumlah: {qty}</p>
-          <p>Harga: Rp{countPrice(price, qty)}</p>
+          <p>Product name: {name}</p>
+          <p>Quantity: {qty}</p>
+          <p>Price: Rp{countPrice(price, qty)}</p>
           <hr />
-          <p>Diskon: Rp{totalDiscount} ({discount}%)</p>
-          <p>Total Pajak: Rp{totalTax} ({tax}%)</p>
+          <p>Discount: Rp{totalDiscount} ({discount}%)</p>
+          <p>Tax: Rp{totalTax} ({tax}%)</p>
           <p>Subtotal: Rp{priceAfterDiscount + totalTax}</p>
           <hr />
-          <p style={{ marginTop: '-1px' }}>Total Harga: Rp{countTotalPrice(form)}</p>
+          <p style={{ marginTop: '-1px' }}>Total Price: Rp{countTotalPrice(form)}</p>
           <a href="https://typedoc.vercel.app" target="_blank"><button className={styles.showTypeScript}>Show Documentation</button></a>
         </div>
       </div>
