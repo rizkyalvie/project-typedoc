@@ -8,8 +8,8 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Documenting JavaScript</title>
-        <meta name="description" content="Documenting JavaScript" />
+        <title>Documenting TypeScript</title>
+        <meta name="description" content="Documenting TypeScript" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
